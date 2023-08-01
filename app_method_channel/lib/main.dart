@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       text = '';
     });
     _service.callEventChanel(_controller.value.text).listen((event) {
-      print(event);
+      dev.log(event);
       setState(() {
         text = event;
       });

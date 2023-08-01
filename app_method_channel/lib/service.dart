@@ -1,4 +1,5 @@
 
+import 'dart:convert';
 import 'dart:developer' as dev;
 
 import 'package:flutter/services.dart';
@@ -9,6 +10,7 @@ class PlatformService{
 
   Future<String> callMethodChannel(String arg) async {
     try{
+      dev.log(arg);
       return await method.invokeMethod('CALL', arg);
     } on PlatformException catch (e){
       dev.log('Failed to get value: ${e.message}');
@@ -16,11 +18,13 @@ class PlatformService{
     }
   }
 
-  Stream<String> callEventChanel(String arg) => stream.receiveBroadcastStream()
+  Stream<String> callEventChanel(String arg) {
+    return stream.receiveBroadcastStream(arg)
       .map((event) {
-        print(event);
+        dev.log(event);
         return event as String;
       });
+  }
 }
 
 

@@ -31,7 +31,8 @@ class MainActivity: FlutterActivity() {
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, methodChannelId).setMethodCallHandler{
             call, result ->
             if (call.method == intentMassageId){
-                result.success(call.arguments as String)
+                println("args: ${call.arguments}")
+                result.success(call.arguments)
             } else {
                 result.notImplemented()
             }
@@ -39,32 +40,36 @@ class MainActivity: FlutterActivity() {
 
         EventChannel(flutterEngine.dartExecutor, eventsChannel).setStreamHandler(
                 object : EventChannel.StreamHandler {
-                    @SuppressLint("UnspecifiedRegisterReceiverFlag")
                     override fun onListen(args: Any?, events: EventChannel.EventSink) {
                         val intent = Intent(intentName)
                         receiver = createReceiver(events)
                         applicationContext?.registerReceiver(receiver, IntentFilter(intentName))
                         job = CoroutineScope(Dispatchers.Default).launch {
+                            println("args: $args")
+
+                            intent.putExtra(
+                                    intentMassageId,
+                                    "0"
+                            )
+                            applicationContext?.sendBroadcast(intent)
                             delay(timeMillis = 1000)
                             intent.putExtra(
-                                    methodChannelId,
+                                    intentMassageId,
                                     "1"
                             )
+                            applicationContext?.sendBroadcast(intent)
                             delay(timeMillis = 1000)
                             intent.putExtra(
-                                    methodChannelId,
+                                    intentMassageId,
                                     "2"
                             )
+                            applicationContext?.sendBroadcast(intent)
                             delay(timeMillis = 1000)
                             intent.putExtra(
-                                    methodChannelId,
-                                    "3"
+                                    intentMassageId,
+                                   args as String?
                             )
-                            delay(timeMillis = 1000)
-//                            intent.putExtra(
-//                                   methodChannelId,
-//                                   args as String
-//                            )
+                            applicationContext?.sendBroadcast(intent)
                         }
                     }
 
@@ -79,7 +84,7 @@ class MainActivity: FlutterActivity() {
     fun createReceiver(events: EventChannel.EventSink): BroadcastReceiver {
         return object : BroadcastReceiver(){
             override fun onReceive(context: Context, intent: Intent) {
-                events.success(intent.getIntExtra(intentMassageId, 0))
+                events.success(intent.getStringExtra(intentMassageId))
             }
         }
 
