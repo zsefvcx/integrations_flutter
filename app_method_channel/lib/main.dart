@@ -1,6 +1,7 @@
 
 import 'dart:developer' as dev;
 
+import 'package:app_method_channel/service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,8 +34,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+  final _service = PlatformService();
   late TextEditingController _controller;
+  String text = '';
 
   @override
   void initState() {
@@ -58,6 +60,27 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Future<void> _getStateData() async {
+    setState(() {
+      text = '';
+    });
+    text = await _service.callMethodChannel(_controller.value.text);
+    setState(() {
+    });
+  }
+
+  void _getStateData2() {
+    setState(() {
+      text = '';
+    });
+    _service.callEventChanel(_controller.value.text).listen((event) {
+      print(event);
+      setState(() {
+        text = event;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,9 +101,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ElevatedButton(onPressed: (){
-              _controller.clear();
-              _controller.text = 'Clear Demo Text';
-            }, child: const Icon(Icons.abc, size: 25,)),
+             //_controller.clear();
+             // _controller.text = 'Clear Demo Text';
+              _getStateData();
+            }, child: const Text('Get from MethodChannel')),
+            ElevatedButton(onPressed: (){
+              //_controller.clear();
+              // _controller.text = 'Clear Demo Text';
+              _getStateData2();
+            }, child: const Text('Get from EventChannel')),
+            Center(
+              child: Text(text),
+            )
+
           ],
         ),
       ),
