@@ -8,12 +8,12 @@ import Flutter
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     
-	let controller : FlutterViewConrtoller = windowa?.rootViewController as! FlutterViewConrtoller
+	let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
 	
 	let channel = FlutterMethodChannel(name: "CALL_METHOD",
 											binaryMessenger: controller.binaryMessenger)
 											
-	let eventChannel = FlutterMethodChannel(name: "CALL_EVENTS",
+	let eventChannel = FlutterEventChannel(name: "CALL_EVENTS",
 											binaryMessenger: controller.binaryMessenger)										
 	
 	GeneratedPluginRegistrant.register(with: self)
@@ -21,13 +21,13 @@ import Flutter
 	channel.setMethodCallHandler({
 		(call: FlutterMethodCall, result: FlutterResult) -> Void in
 		guard call.method  == "CALL" else {
-			result(FlutterMethodImplemented)
+			result(FlutterMethodNotImplemented)
 			return
 		}
 	
 		eventChannel.setStreamHandler(StreamHandler())
 	
-		result(Int.random(in:0..<500))
+		result(call.arguments)
 	})
 	
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -36,16 +36,30 @@ import Flutter
 
 class StreamHandler:NSObject, FlutterStreamHandler {
 
-	func onListen(withArguments arguments: Any?, eventSink event: @escaping FlutterEventSinc) -> FlutterError? {
-		var count = 100
-		Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-			if (count == 20){
-				timer.invaalidate()
-			}
-			events(Int.random(in: 0..<500))
-			count += 1
-		
-		}
+	func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
+		//var count = 100
+		//Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+		//	if (count == 20){
+		//		timer.invalidate()
+		//	}
+            //events(call.arguments as String)
+		//	count += 1
+		//
+		//}
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                // do stuff 1 seconds later
+            }
+        
+        events("0")
+        RunLoop.current.add(timer, forMode: .common)
+        events("1")
+        RunLoop.current.add(timer, forMode: .common)
+        events("2")
+        RunLoop.current.add(timer, forMode: .common)
+        events(arguments as! String)
+
+        
+        
 		return nil
 	}
 
