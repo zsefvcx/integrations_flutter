@@ -24,12 +24,13 @@ import Flutter
 			result(FlutterMethodNotImplemented)
 			return
 		}
-	
-		eventChannel.setStreamHandler(StreamHandler())
-	
+
+        //print(call.arguments)
 		result(call.arguments)
 	})
-	
+
+	eventChannel.setStreamHandler(StreamHandler())
+
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
@@ -46,19 +47,28 @@ class StreamHandler:NSObject, FlutterStreamHandler {
 		//	count += 1
 		//
 		//}
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                // do stuff 1 seconds later
-            }
-        
-        events("0")
-        RunLoop.current.add(timer, forMode: .common)
-        events("1")
-        RunLoop.current.add(timer, forMode: .common)
-        events("2")
-        RunLoop.current.add(timer, forMode: .common)
-        events(arguments as! String)
+        //print(arguments as! String)
 
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+            print("async after 1000 milliseconds")
+            events("0")
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
+            print("async after 2000 milliseconds")
+            events("1")
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(3000)) {
+            print("async after 3000 milliseconds")
+            events("3")
+        }
+
+
+         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(4000)) {
+            print("async after 4000 milliseconds")
+            events(arguments as! String)
+         }
         
 		return nil
 	}
