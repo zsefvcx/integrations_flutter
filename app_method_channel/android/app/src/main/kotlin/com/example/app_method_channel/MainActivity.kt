@@ -17,6 +17,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity: FlutterActivity() {
+
+    private val androidViewId   = "INTEGRATION_ANDROID"
     private val eventsChannel   = "CALL_EVENTS"
     private val methodChannelId = "CALL_METHOD"
     private val intentName      = "EVENTS"
@@ -28,11 +30,18 @@ class MainActivity: FlutterActivity() {
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine){
         super.configureFlutterEngine(flutterEngine)
 
+        flutterEngine
+            .platformViewsController
+            .registry
+            .registerViewFactory(androidViewId, AndroidTextViewFactory(flutterEngine.dartExecutor.binaryMessenger))
+
+
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, methodChannelId).setMethodCallHandler{
             call, result ->
             if (call.method == intentMassageId){
                 println("args: ${call.arguments}")
                 result.success(call.arguments)
+
             } else {
                 result.notImplemented()
             }

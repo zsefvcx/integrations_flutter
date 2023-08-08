@@ -4,6 +4,8 @@ import 'dart:developer' as dev;
 import 'package:app_method_channel/service.dart';
 import 'package:flutter/material.dart';
 
+import 'platforn_view_mobile.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -112,8 +114,15 @@ class _MyHomePageState extends State<MyHomePage> {
             }, child: const Text('Get from EventChannel')),
             Center(
               child: Text(text),
-            )
-
+            ),
+            if(text!='')SizedBox(
+              height: 100,
+              width: 400,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: PlatformViewMobile(data: text),
+              ),
+            ),
           ],
         ),
       ),
@@ -125,3 +134,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
