@@ -38,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final _service = PlatformService();
   late TextEditingController _controller;
-  String text = '';
+  String text = 'Press any button';
 
   @override
   void initState() {
@@ -63,18 +63,22 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> _getStateData() async {
+    text = '';
     setState(() {
-      text = '';
+
     });
+    await Future.delayed(const Duration(seconds: 2));
     text = await _service.callMethodChannel(_controller.value.text);
     setState(() {
     });
   }
 
-  void _getStateData2() {
+  Future<void> _getStateData2() async {
+    text = '';
     setState(() {
-      text = '';
+
     });
+    await Future.delayed(const Duration(seconds: 2));
     _service.callEventChanel(_controller.value.text).listen((event) {
       dev.log(event);
       setState(() {
@@ -105,17 +109,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: (){
              //_controller.clear();
              // _controller.text = 'Clear Demo Text';
-              _getStateData();
+              if(!(text=='' || text=='0' || text=='1'  || text=='2'))_getStateData();
             }, child: const Text('Get from MethodChannel')),
             ElevatedButton(onPressed: (){
               //_controller.clear();
               // _controller.text = 'Clear Demo Text';
-              _getStateData2();
+              if(!(text=='' || text=='0' || text=='1'  || text=='2'))_getStateData2();
             }, child: const Text('Get from EventChannel')),
             Center(
               child: Text(text),
             ),
-            if(text!='')SizedBox(
+            if(!(text=='' || text=='0' || text=='1'  || text=='2'))SizedBox(
               height: 100,
               width: 400,
               child: Padding(

@@ -22,7 +22,7 @@ internal class AndroidTextView(context: Context, id: Int, creationParams: Map<St
 
     init {
         textView = TextView(context)
-        textView.textSize = 72f
+        textView.textSize = 16f
         textView.setBackgroundColor(Color.rgb(255, 255, 255))
         textView.text = createParams?.getValue("0") as String
     }
