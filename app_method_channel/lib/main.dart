@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
 
     });
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     text = await _service.callMethodChannel(_controller.value.text);
     setState(() {
     });
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
 
     });
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     _service.callEventChanel(_controller.value.text).listen((event) {
       dev.log(event);
       setState(() {

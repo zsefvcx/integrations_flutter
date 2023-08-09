@@ -28,6 +28,15 @@ class PlatformViewMobile extends StatelessWidget {
         creationParamsCodec: const StandardMessageCodec(),
       );
       return view;
+    } else if(defaultTargetPlatform == TargetPlatform.iOS){
+      view = UiKitView(viewType: 'INTEGRATION_IOS',
+        onPlatformViewCreated: (id){
+          dev.log('IOS PlatformView with id:$id created');
+        },
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
+      );
+      return view;
     }
 
 
