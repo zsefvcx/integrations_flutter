@@ -1,13 +1,15 @@
 
 import 'dart:developer' as dev;
 
+import 'package:app_method_channel/platform/service.dart';
 import 'package:flutter/services.dart';
 
-class PlatformService{
+class PlatformServiceImpl implements PlatformService{
   static const method = MethodChannel('CALL_METHOD');
   static const stream = EventChannel('CALL_EVENTS');
 
-  Future<String> callMethodChannel(String arg) async {
+  @override
+  Future<String> getValue(String arg) async {
     try{
       dev.log(arg);
       return await method.invokeMethod('CALL', arg);
@@ -17,12 +19,13 @@ class PlatformService{
     }
   }
 
-  Stream<String> callEventChanel(String arg) {
+  @override
+  Stream<String> getStream(String arg) {
     return stream.receiveBroadcastStream(arg)
-      .map((event) {
-        dev.log(event);
-        return event as String;
-      });
+        .map((event) {
+      dev.log(event);
+      return event as String;
+    });
   }
 }
 

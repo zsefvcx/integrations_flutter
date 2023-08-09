@@ -5,8 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class PlatformViewMobile extends StatelessWidget {
-  const PlatformViewMobile({super.key, required this.data});
+class PlatformView extends StatelessWidget {
+  const PlatformView({super.key, required this.data});
 
   final String data;
 

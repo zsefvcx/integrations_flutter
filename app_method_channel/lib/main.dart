@@ -1,10 +1,12 @@
 
 import 'dart:developer' as dev;
 
-import 'package:app_method_channel/service.dart';
+import 'package:app_method_channel/platform/service.dart';
 import 'package:flutter/material.dart';
 
-import 'platforn_view_mobile.dart';
+import 'platform/dummy/platform_view_dummy.dart'
+if (dart.library.html)'platform/web/platform_view_web.dart'
+if (dart.library.io)'platform/mobile/platform_view_mobile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _service = PlatformService();
+  final _service = getService();
   late TextEditingController _controller;
   String text = 'Press any button';
 
@@ -68,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     });
     await Future.delayed(const Duration(seconds: 1));
-    text = await _service.callMethodChannel(_controller.value.text);
+    text = await _service.getValue(_controller.value.text);
     setState(() {
     });
   }
@@ -79,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     });
     await Future.delayed(const Duration(seconds: 1));
-    _service.callEventChanel(_controller.value.text).listen((event) {
+    _service.getStream(_controller.value.text).listen((event) {
       dev.log(event);
       setState(() {
         text = event;
@@ -124,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 400,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: PlatformViewMobile(data: text),
+                child: Placeholder(),// PlatformView(data: text),
               ),
             ),
           ],
