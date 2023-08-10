@@ -9,11 +9,18 @@ class PlatformServiceImpl implements PlatformService{
 
   @override
   Stream<String> getStream(String arg) {
-    return _manager.buttonClicked(arg);
+    //throw UnimplementedError();
+    return _manager.getStreamEvent(arg);
   }
 
   @override
   Future<String> getValue(String arg) async {
+    //throw UnimplementedError();
     return _manager.getValueFromJs(arg);
+  }
+
+  @override
+  void toStream(String arg) {
+    _manager.toStream(arg);
   }
 }

@@ -87,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
         text = event;
       });
     });
+    _service.toStream(_controller.value.text);
   }
 
   @override
@@ -116,17 +117,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: (){
               //_controller.clear();
               // _controller.text = 'Clear Demo Text';
-              if(!(text=='' || text=='0' || text=='1'  || text=='2'))_getStateData2();
+              //if(!(text=='' || text=='0' || text=='1'  || text=='2'))
+                _getStateData2();
             }, child: const Text('Get from EventChannel')),
             Center(
               child: Text(text),
             ),
-            if(!(text=='' || text=='0' || text=='1'  || text=='2'))SizedBox(
+             if(!(text=='' || text=='0' || text=='1'  || text=='2'))
+              SizedBox(
               height: 100,
               width: 400,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Placeholder(),// PlatformView(data: text),
+                child: PlatformView(data: text),
               ),
             ),
           ],

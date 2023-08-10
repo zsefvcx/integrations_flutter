@@ -27,6 +27,11 @@ class PlatformServiceImpl implements PlatformService{
       return event as String;
     });
   }
+
+  @override
+  void toStream(String arg) {
+    // TODO: implement toStream
+  }
 }
 
 

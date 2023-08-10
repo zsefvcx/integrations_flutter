@@ -12,5 +12,10 @@ class PlatformServiceImpl implements PlatformService {
     // TODO: implement getValue
     throw UnimplementedError();
   }
+
+  @override
+  void toStream(String arg) {
+    // TODO: implement toStream
+  }
   
 }

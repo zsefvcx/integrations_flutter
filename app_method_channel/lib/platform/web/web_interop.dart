@@ -1,11 +1,11 @@
-@JS('ClicksNamespace')
+@JS()
 library interop;
 
 import 'dart:async';
-import 'package:js/js_util.dart';
-import 'package:js/js.dart';
+import 'dart:js_interop';
+import 'dart:js_util';
 import 'dart:ui' as ui;
-//import 'dart:html' as html;
+import 'dart:html' as html;
 
 @JS('JsInteropEvent')
 class _JsInteropEvent {
@@ -18,28 +18,32 @@ class EventType {
   external static String get InteropEvent;
 }
 
-typedef _ClicksManagerEventListener = void Function(_JsInteropEvent event);
+typedef ClicksManagerEventListener = void Function(_JsInteropEvent event);
 
 @JS('JsInteropManager')
-class _JsInteropManager {
-  external dynamic get buttonElement;
+class JsInteropManager {
+  external factory JsInteropManager();
+
+  external html.IFrameElement get buttonElement;
 
   external String getValueFromJs(String arg);
 
-  external void addEventsListener(
-      String event,
-      _ClicksManagerEventListener listener,
-      );
+  external void sendValueToStreamJs(String arg);
 
-  external void removeEventsListener(
-      String event,
-      _ClicksManagerEventListener listener,
-      );
+  external void addEventListener(
+     String event,
+     ClicksManagerEventListener listener,
+  );
+
+  external void removeEventListener(
+     String event,
+     ClicksManagerEventListener listener,
+  );
 
 }
 
 class _EventStreamProvider {
-  final _JsInteropManager _eventTarget;
+  final JsInteropManager _eventTarget;
   final List<StreamController<dynamic>> _controllers = [];
 
   _EventStreamProvider.forTarget(this._eventTarget);
@@ -53,11 +57,11 @@ class _EventStreamProvider {
     final interopted = allowInterop(onEventReceived);
 
     controller = StreamController.broadcast(
-      onCancel: () => _eventTarget.removeEventsListener(
+      onCancel: () => _eventTarget.removeEventListener(
           eventType,
           interopted,
       ),
-      onListen: () => _eventTarget.addEventsListener(
+      onListen: () => _eventTarget.addEventListener(
           eventType,
           interopted
       ),
@@ -71,26 +75,32 @@ class _EventStreamProvider {
 }
 
 class InteropManager {
-  final _interop = _JsInteropManager();
-  late Stream<String> _buttonClicked;
+  final _interop = JsInteropManager();
+  late Stream<String> _streamEvent;
 
   InteropManager(){
-
-    final streamProvider = _EventStreamProvider.forTarget(_interop);
-
-    // ignore: undefined_prefixed_name
+    //ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
       'web-button',
         (viewId) => _interop.buttonElement,
     );
 
-    _buttonClicked = streamProvider.forEvent<_JsInteropEvent>(
-      'InteropEvent',
+    final streamProvider = _EventStreamProvider.forTarget(_interop);
+    _streamEvent = streamProvider.forEvent<_JsInteropEvent>(
+      'InteropEvent'
     ).map((event) => event.value);
   }
 
-  String getValueFromJs(String arg) => _interop.getValueFromJs(arg);
+  String getValueFromJs(String arg) {
+    _interop.buttonElement.innerHtml = arg;
+    return _interop.getValueFromJs(arg);
+  }
 
-  Stream<String> buttonClicked(String arg) => _buttonClicked;
-
+  Stream<String> getStreamEvent(String arg) {
+    return _streamEvent;
+  }
+  void toStream(String arg) {
+    _interop.sendValueToStreamJs(arg);
+    _interop.buttonElement.innerHtml = arg;
+  }
 }

@@ -25,7 +25,7 @@ class EventEmitter {
 
      dispatchEvent(event){
             if(this._storage.has(event.type)){
-                this._storage.set(event.type).foeEach(handler => handler(event));
+                this._storage.get(event.type).forEach(handler => handler(event));
                 return true;
             }
 
@@ -34,6 +34,9 @@ class EventEmitter {
 }
 
 class JsInteropManager extends EventEmitter{
+
+
+
     constructor(){
         super();
 
@@ -41,7 +44,8 @@ class JsInteropManager extends EventEmitter{
         this.buttonElement.innerText = 'Web Native Button';
 
         window.addEventListener('click', (e) => {
-            if(e.target === this.buttonElement){
+            if(e.target === this.buttonElement)
+            {
                 const interopEvent = new JsInteropEvent('From Web');
                 this.dispatchEvent(interopEvent);
             }
@@ -49,10 +53,18 @@ class JsInteropManager extends EventEmitter{
         window._clickManager = this;
     }
 
-    getValueFromJs(String arg) {
+    sendValueToStreamJs(arg){
+        const interopEvent = new JsInteropEvent(arg);
+        this.dispatchEvent(interopEvent);
+        //alert("Hello From Web " + arg);
+    }
+
+    getValueFromJs(arg) {
         return arg;
     }
 }
+
+window.JsInteropManager = JsInteropManager;
 
 class JsInteropEvent {
     constructor(value) {
@@ -61,7 +73,9 @@ class JsInteropEvent {
     }
 }
 
-window.ClicksNamespace = {
-    JsInteropManager,
-    JsInteropEvent,
-}
+window.JsInteropEvent = JsInteropEvent;
+
+//window.ClicksNamespace = {
+//    JsInteropManager,
+//    JsInteropEvent,
+//}
