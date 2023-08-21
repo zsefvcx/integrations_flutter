@@ -7,7 +7,7 @@ import io.flutter.embedding.engine.FlutterEngine
 class MainActivity: FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine){
 
-        flutterEngine.plugins.add(SenderData())
+        //flutterEngine.plugins.add(SenderData())
         super.configureFlutterEngine(flutterEngine)
     }
 
