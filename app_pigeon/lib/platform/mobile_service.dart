@@ -24,16 +24,16 @@ class PlatformServiceImpl implements PlatformService{
   }
 
 
-  @override
-  void toStream(String arg) {
-    // TODO: implement toStream
-  }
-
-  @override
-  Stream<String> getStream(String arg) {
-    // TODO: implement getStream
-    throw UnimplementedError();
-  }
+  // @override
+  // void toStream(String arg) {
+  //   // TODO: implement toStream
+  // }
+  //
+  // @override
+  // Stream<String> getStream(String arg) {
+  //   // TODO: implement getStream
+  //   throw UnimplementedError();
+  //}
 }
 
 

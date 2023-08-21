@@ -1,13 +1,13 @@
 package com.example.app_pigeon
 
-import io.flutter.plugins.SenderData
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugins.SenderDataPlugin
 
 class MainActivity: FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine){
 
-        //flutterEngine.plugins.add(SenderData())
+        flutterEngine.plugins.add(SenderDataPlugin())
         super.configureFlutterEngine(flutterEngine)
     }
 

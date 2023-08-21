@@ -16,6 +16,7 @@ class DataController implements IDataController, DataReceiver {
 
   ReceiveData rcv = ReceiveData(data: 'null');
 
+  //синглтон - один он в приложении...
   factory DataController.instance() => _instance ??= DataController._();
 
   DataController._() : _sink = DataSender(){

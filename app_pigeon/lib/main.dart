@@ -72,20 +72,20 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  Future<void> _getStateData2() async {
-    text = '';
-    setState(() {
-
-    });
-    await Future.delayed(const Duration(seconds: 1));
-    _service.getStream(_controller.value.text).listen((event) {
-      dev.log(event);
-      setState(() {
-        text = event;
-      });
-    });
-    _service.toStream(_controller.value.text);
-  }
+  // Future<void> _getStateData2() async {
+  //   text = '';
+  //   setState(() {
+  //
+  //   });
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   _service.getStream(_controller.value.text).listen((event) {
+  //     dev.log(event);
+  //     setState(() {
+  //       text = event;
+  //     });
+  //   });
+  //   _service.toStream(_controller.value.text);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -110,13 +110,13 @@ class _MyHomePageState extends State<MyHomePage> {
              //_controller.clear();
              // _controller.text = 'Clear Demo Text';
               if(!(text=='' || text=='0' || text=='1'  || text=='2'))_getStateData();
-            }, child: const Text('Get from MethodChannel')),
-            ElevatedButton(onPressed: (){
-              //_controller.clear();
-              // _controller.text = 'Clear Demo Text';
-              //if(!(text=='' || text=='0' || text=='1'  || text=='2'))
-                _getStateData2();
-            }, child: const Text('Get from EventChannel')),
+            }, child: const Text('Get from pigeon')),
+            // ElevatedButton(onPressed: (){
+            //   //_controller.clear();
+            //   // _controller.text = 'Clear Demo Text';
+            //   //if(!(text=='' || text=='0' || text=='1'  || text=='2'))
+            //     _getStateData2();
+            // }, child: const Text('Get from EventChannel')),
             Center(
               child: Text(text),
             ),
