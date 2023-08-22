@@ -7,7 +7,7 @@ import io.flutter.plugins.SenderDataPlugin
 class MainActivity: FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine){
 
-        flutterEngine.plugins.add(SenderDataPlugin())
+        flutterEngine.plugins.add(SednerDataPlugin())
         super.configureFlutterEngine(flutterEngine)
     }
 
