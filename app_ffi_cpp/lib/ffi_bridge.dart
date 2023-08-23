@@ -17,5 +17,5 @@ class FFIBridge {
     _getCValue = dl.lookupFunction<SimpleFunction, SimpleFunctionDart>('get_len');
   }
   
-  int getCValue(String arg) => _getCValue('$arg\n'.toNativeUtf8());
+  int getCValue(String arg) => _getCValue(arg.toNativeUtf8());
 }

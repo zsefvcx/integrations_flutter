@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: (){
              //_controller.clear();
              // _controller.text = 'Clear Demo Text';
-              if(!(text=='' || text=='0' || text=='1'  || text=='2'))_getStateData();
+              if(!(text==''))_getStateData();
             }, child: const Text('Get from cpp')),
             // ElevatedButton(onPressed: (){
             //   //_controller.clear();
