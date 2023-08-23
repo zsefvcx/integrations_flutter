@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6.0)
 
 add_library(
-        simple
+        stringlen
         SHARED
-        ../../stringlen.c
+        ../../src/stringlen.c
 )

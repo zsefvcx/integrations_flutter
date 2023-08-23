@@ -1,0 +1,7 @@
+# ninja log v5
+0	31	714482825	CMakeFiles/simple.dir/C_/projects/integrations_flutter/app_ffi_cpp/src/stringlen.c.o	58cdabeca9174d4e
+32	73	714482825	C:/projects/integrations_flutter/app_ffi_cpp/build/app/intermediates/cxx/Debug/295s5w61/obj/x86/libsimple.so	446b58f46c1855e3
+1	33	714483259	CMakeFiles/stringlen.dir/C_/projects/integrations_flutter/app_ffi_cpp/src/stringlen.c.o	8f01df4927be20ed
+33	79	714483259	C:/projects/integrations_flutter/app_ffi_cpp/build/app/intermediates/cxx/Debug/295s5w61/obj/x86/libstringlen.so	6d3ab064e62a45f9
+2	38	714483716	CMakeFiles/stringlen.dir/C_/projects/integrations_flutter/app_ffi_cpp/src/stringlen.c.o	8f01df4927be20ed
+38	81	714483717	C:/projects/integrations_flutter/app_ffi_cpp/build/app/intermediates/cxx/Debug/295s5w61/obj/x86/libstringlen.so	6d3ab064e62a45f9

@@ -1,18 +1,18 @@
 
 import 'dart:developer' as dev;
 
+import 'package:app_ffi_cpp/ffi_bridge.dart';
 import 'package:app_ffi_cpp/platform/service.dart';
 
 class PlatformServiceImpl implements PlatformService{
+
+  final _bridge = FFIBridge();
 
   @override
   Future<String> getValue(String arg) async {
     try{
       dev.log(arg);
-      //SendData data = SendData(data: arg);
-      //await DataController.instance().send(data);
-      //Скорее всего надо будет ожидать сообщение, но не факт
-      return /*DataController.instance().rcv.data??*/'null';
+      return _bridge.getCValue(arg).toString();
 
     } catch (e){
       dev.log('Failed to get value: $e');

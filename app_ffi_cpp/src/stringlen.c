@@ -1,8 +1,17 @@
-#include <iostream>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 
-int get_len(String str){
-    std::cout << "rcv:" << str << std::endl;
+//см там более подробно https://codelabs.developers.google.com/codelabs/flutter-ffigen#0
 
-    return str.length();
+int get_len(const char *arg){
+    printf("%s \n",arg);
+    return strlen(arg);
+}
+
+int main()
+{
+    int res = get_len("Hello World");
+
+    printf("%d \n",res);
+
 }
