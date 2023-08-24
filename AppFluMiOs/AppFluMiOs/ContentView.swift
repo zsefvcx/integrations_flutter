@@ -29,22 +29,41 @@ struct ContentView: View {
     func showFlutter() {
         // Get the RootViewController.
         guard
-          let windowScene = UIApplication.shared.connectedScenes
-            .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
-          let window = windowScene.windows.first(where: \.isKeyWindow),
-          let rootViewController = window.rootViewController
+            let windowScene = UIApplication.shared.connectedScenes
+                .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+            let window = windowScene.windows.first(where: \.isKeyWindow),
+            let rootViewController = window.rootViewController
         else { return }
-
+        
         // Create the FlutterViewController.
         let flutterViewController = FlutterViewController(
-          engine: flutterDependencies.flutterEngine,
-          nibName: nil,
-          bundle: nil)
+            engine: flutterDependencies.flutterEngine,
+            nibName: nil,
+            bundle: nil)
         flutterViewController.modalPresentationStyle = .overCurrentContext
         flutterViewController.isViewOpaque = false
-
+        
         rootViewController.present(flutterViewController, animated: true)
-      }
+        
+        
+        
+        let channel = FlutterMethodChannel(name: "CALL_METHOD",
+                                                binaryMessenger: flutterViewController.binaryMessenger)
+        
+        
+        channel.setMethodCallHandler({
+            (call: FlutterMethodCall, result: FlutterResult) -> Void in
+            guard call.method  == "CALL" else {
+                result(FlutterMethodNotImplemented)
+                return
+            }
+                
+            result(Int.random(in:0..<1000))
+        })
+        
+        
+        
+    }
 
 
 }
