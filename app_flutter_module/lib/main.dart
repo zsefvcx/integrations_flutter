@@ -60,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: (){
              //_controller.clear();
              // _controller.text = 'Clear Demo Text';
-              if(!(text==null))_getStateData();
+              //if(!(text==null))
+                _getStateData();
             }, child: const Text('Get from MethodChannel')),
             Center(
               child: Text(text.toString()),

@@ -10,6 +10,7 @@ class PlatformServiceImpl implements PlatformService{
   @override
   Future<int> getValue() async {
     try{
+      dev.log('CALL SEND');
       return await method.invokeMethod('CALL');
     } on PlatformException catch (e){
       dev.log('Failed to get value: ${e.message}');
