@@ -7,78 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		774527D22A974E4C00EEFC20 /* AppFluMiOsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774527D12A974E4C00EEFC20 /* AppFluMiOsApp.swift */; };
-		774527D42A974E4C00EEFC20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774527D32A974E4C00EEFC20 /* ContentView.swift */; };
-		774527D62A974E5000EEFC20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774527D52A974E5000EEFC20 /* Assets.xcassets */; };
-		774527DA2A974E5000EEFC20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774527D92A974E5000EEFC20 /* Preview Assets.xcassets */; };
+		0B3244F804ECA83C385E28CE /* libPods-AppFluMiOs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67FAA02048AA2F579BCA9F /* libPods-AppFluMiOs.a */; };
+		77006DCA2A977CA8009233B0 /* AppFluMiOsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77006DC92A977CA8009233B0 /* AppFluMiOsApp.swift */; };
+		77006DCC2A977CA8009233B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77006DCB2A977CA8009233B0 /* ContentView.swift */; };
+		77006DCE2A977CAA009233B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77006DCD2A977CAA009233B0 /* Assets.xcassets */; };
+		77006DD12A977CAA009233B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77006DD02A977CAA009233B0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		774527CE2A974E4C00EEFC20 /* AppFluMiOs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFluMiOs.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		774527D12A974E4C00EEFC20 /* AppFluMiOsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFluMiOsApp.swift; sourceTree = "<group>"; };
-		774527D32A974E4C00EEFC20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		774527D52A974E5000EEFC20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		774527D72A974E5000EEFC20 /* AppFluMiOs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppFluMiOs.entitlements; sourceTree = "<group>"; };
-		774527D92A974E5000EEFC20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		77006DC62A977CA8009233B0 /* AppFluMiOs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFluMiOs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77006DC92A977CA8009233B0 /* AppFluMiOsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFluMiOsApp.swift; sourceTree = "<group>"; };
+		77006DCB2A977CA8009233B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		77006DCD2A977CAA009233B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77006DD02A977CAA009233B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D67FAA02048AA2F579BCA9F /* libPods-AppFluMiOs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppFluMiOs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E265F1DA61EAFAB83EF5EF0 /* Pods-AppFluMiOs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFluMiOs.release.xcconfig"; path = "Target Support Files/Pods-AppFluMiOs/Pods-AppFluMiOs.release.xcconfig"; sourceTree = "<group>"; };
+		E459E97F49E91C5ACA66410E /* Pods-AppFluMiOs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFluMiOs.debug.xcconfig"; path = "Target Support Files/Pods-AppFluMiOs/Pods-AppFluMiOs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		774527CB2A974E4C00EEFC20 /* Frameworks */ = {
+		77006DC32A977CA8009233B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3244F804ECA83C385E28CE /* libPods-AppFluMiOs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		774527C52A974E4C00EEFC20 = {
+		77006DBD2A977CA8009233B0 = {
 			isa = PBXGroup;
 			children = (
-				774527D02A974E4C00EEFC20 /* AppFluMiOs */,
-				774527CF2A974E4C00EEFC20 /* Products */,
+				77006DC82A977CA8009233B0 /* AppFluMiOs */,
+				77006DC72A977CA8009233B0 /* Products */,
+				A6F4BD68857ED39AF1014C8E /* Pods */,
+				C12DCEF8C4AB9A0B21CA3526 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		774527CF2A974E4C00EEFC20 /* Products */ = {
+		77006DC72A977CA8009233B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				774527CE2A974E4C00EEFC20 /* AppFluMiOs.app */,
+				77006DC62A977CA8009233B0 /* AppFluMiOs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		774527D02A974E4C00EEFC20 /* AppFluMiOs */ = {
+		77006DC82A977CA8009233B0 /* AppFluMiOs */ = {
 			isa = PBXGroup;
 			children = (
-				774527D12A974E4C00EEFC20 /* AppFluMiOsApp.swift */,
-				774527D32A974E4C00EEFC20 /* ContentView.swift */,
-				774527D52A974E5000EEFC20 /* Assets.xcassets */,
-				774527D72A974E5000EEFC20 /* AppFluMiOs.entitlements */,
-				774527D82A974E5000EEFC20 /* Preview Content */,
+				77006DC92A977CA8009233B0 /* AppFluMiOsApp.swift */,
+				77006DCB2A977CA8009233B0 /* ContentView.swift */,
+				77006DCD2A977CAA009233B0 /* Assets.xcassets */,
+				77006DCF2A977CAA009233B0 /* Preview Content */,
 			);
 			path = AppFluMiOs;
 			sourceTree = "<group>";
 		};
-		774527D82A974E5000EEFC20 /* Preview Content */ = {
+		77006DCF2A977CAA009233B0 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				774527D92A974E5000EEFC20 /* Preview Assets.xcassets */,
+				77006DD02A977CAA009233B0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A6F4BD68857ED39AF1014C8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E459E97F49E91C5ACA66410E /* Pods-AppFluMiOs.debug.xcconfig */,
+				9E265F1DA61EAFAB83EF5EF0 /* Pods-AppFluMiOs.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C12DCEF8C4AB9A0B21CA3526 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D67FAA02048AA2F579BCA9F /* libPods-AppFluMiOs.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		774527CD2A974E4C00EEFC20 /* AppFluMiOs */ = {
+		77006DC52A977CA8009233B0 /* AppFluMiOs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 774527DD2A974E5000EEFC20 /* Build configuration list for PBXNativeTarget "AppFluMiOs" */;
+			buildConfigurationList = 77006DD42A977CAA009233B0 /* Build configuration list for PBXNativeTarget "AppFluMiOs" */;
 			buildPhases = (
-				774527CA2A974E4C00EEFC20 /* Sources */,
-				774527CB2A974E4C00EEFC20 /* Frameworks */,
-				774527CC2A974E4C00EEFC20 /* Resources */,
+				3E3FB7A10687C98430E89D48 /* [CP] Check Pods Manifest.lock */,
+				73D1E14E2C77F576795C5F9D /* [CP-User] Run Flutter Build app_flutter_module Script */,
+				77006DC22A977CA8009233B0 /* Sources */,
+				77006DC32A977CA8009233B0 /* Frameworks */,
+				77006DC42A977CA8009233B0 /* Resources */,
+				7E69541E3D50E8626E867747 /* [CP-User] Embed Flutter Build app_flutter_module Script */,
 			);
 			buildRules = (
 			);
@@ -86,25 +112,25 @@
 			);
 			name = AppFluMiOs;
 			productName = AppFluMiOs;
-			productReference = 774527CE2A974E4C00EEFC20 /* AppFluMiOs.app */;
+			productReference = 77006DC62A977CA8009233B0 /* AppFluMiOs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		774527C62A974E4C00EEFC20 /* Project object */ = {
+		77006DBE2A977CA8009233B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					774527CD2A974E4C00EEFC20 = {
+					77006DC52A977CA8009233B0 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 774527C92A974E4C00EEFC20 /* Build configuration list for PBXProject "AppFluMiOs" */;
+			buildConfigurationList = 77006DC12A977CA8009233B0 /* Build configuration list for PBXProject "AppFluMiOs" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,42 +138,87 @@
 				en,
 				Base,
 			);
-			mainGroup = 774527C52A974E4C00EEFC20;
-			productRefGroup = 774527CF2A974E4C00EEFC20 /* Products */;
+			mainGroup = 77006DBD2A977CA8009233B0;
+			productRefGroup = 77006DC72A977CA8009233B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				774527CD2A974E4C00EEFC20 /* AppFluMiOs */,
+				77006DC52A977CA8009233B0 /* AppFluMiOs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		774527CC2A974E4C00EEFC20 /* Resources */ = {
+		77006DC42A977CA8009233B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774527DA2A974E5000EEFC20 /* Preview Assets.xcassets in Resources */,
-				774527D62A974E5000EEFC20 /* Assets.xcassets in Resources */,
+				77006DD12A977CAA009233B0 /* Preview Assets.xcassets in Resources */,
+				77006DCE2A977CAA009233B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E3FB7A10687C98430E89D48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppFluMiOs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73D1E14E2C77F576795C5F9D /* [CP-User] Run Flutter Build app_flutter_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build app_flutter_module Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../app_flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		7E69541E3D50E8626E867747 /* [CP-User] Embed Flutter Build app_flutter_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build app_flutter_module Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../app_flutter_module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		774527CA2A974E4C00EEFC20 /* Sources */ = {
+		77006DC22A977CA8009233B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774527D42A974E4C00EEFC20 /* ContentView.swift in Sources */,
-				774527D22A974E4C00EEFC20 /* AppFluMiOsApp.swift in Sources */,
+				77006DCC2A977CA8009233B0 /* ContentView.swift in Sources */,
+				77006DCA2A977CA8009233B0 /* AppFluMiOsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		774527DB2A974E5000EEFC20 /* Debug */ = {
+		77006DD22A977CAA009233B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,15 +268,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		774527DC2A974E5000EEFC20 /* Release */ = {
+		77006DD32A977CAA009233B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -249,79 +322,68 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		774527DE2A974E5000EEFC20 /* Debug */ = {
+		77006DD52A977CAA009233B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E459E97F49E91C5ACA66410E /* Pods-AppFluMiOs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AppFluMiOs/AppFluMiOs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppFluMiOs/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.AppFluMiOs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		774527DF2A974E5000EEFC20 /* Release */ = {
+		77006DD62A977CAA009233B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E265F1DA61EAFAB83EF5EF0 /* Pods-AppFluMiOs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AppFluMiOs/AppFluMiOs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppFluMiOs/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.AppFluMiOs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,25 +393,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		774527C92A974E4C00EEFC20 /* Build configuration list for PBXProject "AppFluMiOs" */ = {
+		77006DC12A977CA8009233B0 /* Build configuration list for PBXProject "AppFluMiOs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				774527DB2A974E5000EEFC20 /* Debug */,
-				774527DC2A974E5000EEFC20 /* Release */,
+				77006DD22A977CAA009233B0 /* Debug */,
+				77006DD32A977CAA009233B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		774527DD2A974E5000EEFC20 /* Build configuration list for PBXNativeTarget "AppFluMiOs" */ = {
+		77006DD42A977CAA009233B0 /* Build configuration list for PBXNativeTarget "AppFluMiOs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				774527DE2A974E5000EEFC20 /* Debug */,
-				774527DF2A974E5000EEFC20 /* Release */,
+				77006DD52A977CAA009233B0 /* Debug */,
+				77006DD62A977CAA009233B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 774527C62A974E4C00EEFC20 /* Project object */;
+	rootObject = 77006DBE2A977CA8009233B0 /* Project object */;
 }
